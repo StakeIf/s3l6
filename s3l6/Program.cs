@@ -21,7 +21,6 @@ namespace s3l6
 			BigBall.Display();
 
 			////////////
-			
 			Console.Write("\n11) Cоздать массив объектов и продемонстрировать работу с ним\n");
 			Console.Write("\nНа примере класса Монета:\n");
 			Coin[] MyArrayCoins = new Coin[5];
@@ -31,6 +30,7 @@ namespace s3l6
 				MyArrayCoins[i].RandXY();
 				MyArrayCoins[i].Display();
 			}
+
 
 			////////////
 
