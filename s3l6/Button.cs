@@ -9,6 +9,10 @@ namespace s3l6
 	{
 		private bool OnOff;
 
+		private static Button lastButton;
+		private Button prev;
+		private Button next;
+
 		//Конструктор
 		public Button()
 		{
@@ -44,6 +48,5 @@ namespace s3l6
 			else
 				OnOff = true;
 		}
-
 	}
 }

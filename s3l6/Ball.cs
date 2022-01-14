@@ -4,11 +4,16 @@ using System.Text;
 
 namespace s3l6
 {
-    class Ball
-    {
-        private int x = 0;
-        private int y = 0;
-        private String Name = "";
+	class Ball
+	{
+		private int x = 0;
+		private int y = 0;
+		private String Name = "";
+
+		private static Ball lastBall;
+		private Ball prev;
+		private Ball next;
+
 		public int X
 		{
 			get => x;
@@ -31,6 +36,13 @@ namespace s3l6
 			x = 0;
 			y = 0;
 			Name = "";
+		}
+
+		public Ball(int x_s, int y_s, string Name_s)
+		{
+			this.x = x_s;
+			this.y = y_s;
+			this.Name = Name_s;
 		}
 
 		//Ф-ии получения данных из полей
@@ -68,7 +80,7 @@ namespace s3l6
 		//Вывод данных о Мяче
 		public void Display()
 		{
-			Console.Write("X = " + x + " Y = " + y + " Name - " + Name + "\n");
+			Console.Write("\nX = " + x + " Y = " + y + " Name - " + Name + "\n");
 		}
 		public void MoveBall()
 		{
@@ -84,7 +96,53 @@ namespace s3l6
 			if (key == 's')
 				y--;
 		}
+
+
+		// Новый список
+		public void NewList()
+		{
+			lastBall = null;
+		}
+
+		// Добавление элемента в конец списка
+		public void Add()
+		{
+			if (lastBall == null)
+				this.prev = null;
+			else
+			{
+				lastBall.next = this;
+				prev = lastBall;
+			}
+			lastBall = this;
+			this.next = null;
+		}
+
+		// Вывод на дисплей содержимого списка
+		public void reprint()
+		{
+			Ball uk;   // Вспомогательная ссылка
+			uk = lastBall;
+			if (uk == null)
+			{
+				Console.WriteLine("Список пуст!");
+				return;
+			}
+			else
+				Console.WriteLine("\nСодержимое списка:\n");
+
+			// Цикл печати в обратном порядке значений элементов списка:
+			while (uk != null)
+			{
+				Console.WriteLine(uk.GetX() + " " + uk.GetY() + " " + uk.GetName() + " " + "\t");
+				uk = uk.prev;
+			}
+		}
+
+		public void ModernName()
+		{
+			Name = "Ball " + Name;
+		}
+
 	}
-
-
 }
