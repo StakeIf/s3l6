@@ -9,26 +9,28 @@ namespace s3l6
 	{
 		private bool OnOff;
 
-		private static Button lastButton;
-		private Button prev;
-		private Button next;
-
 		//Конструктор
 		public Button()
 		{
 			OnOff = false;
 		}
 
-		//Ф-ии получения данных из полей
-		public bool GetButton()
+		// Конструктор с параметрами
+		public Button(bool OnOff)
 		{
-			return OnOff;
+			this.OnOff = OnOff;
 		}
 
 		//Задание полей класса кнопка
 		public void Set(bool onoffi)
 		{
 			OnOff = onoffi;
+		}
+
+		//Ф-ии получения данных из полей
+		public bool GetButton()
+		{
+			return OnOff;
 		}
 
 		//Вывод данных о кнопке

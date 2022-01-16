@@ -5,24 +5,42 @@ using System.Text;
 namespace s3l6
 {
 	//Платформе
-	public struct Platform
+	public class Platform
 	{
 		private int angle;
 		private int height;
 
-		/*
+		
 		//Конструктор
 		public Platform()
 		{
 			angle = 0;
 			height = 0;
 		}
-		*/
 
-		// Конструктор с параметром
+
+		// Конструктор с одним параметром
+		public Platform(int height)
+		{
+			angle = 0;
+			this.height = height;
+		}
+
+		// Конструктор с параметрами
 		public Platform(int angle, int height)
 		{
 			this.angle = angle;
+			this.height = height;
+		}
+
+		//Установка угла
+		public void SetAngle(int angle)
+		{
+			this.angle = angle;
+		}
+		//Установка длины
+		public void SetHeight(int height)
+		{
 			this.height = height;
 		}
 

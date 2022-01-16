@@ -38,11 +38,34 @@ namespace s3l6
 			Name = "";
 		}
 
-		public Ball(int x_s, int y_s, string Name_s)
+		public Ball(String name)
 		{
-			this.x = x_s;
-			this.y = y_s;
-			this.Name = Name_s;
+			x = 0;
+			y = 0;
+			Name = name;
+		}
+
+		public Ball(int x_, int y_, String name)
+		{
+			x = x_;
+			y = y_;
+			Name = name;
+		}
+
+		//Установщики значений
+		public void SetX(int x_)
+		{
+			x = x_;
+		}
+
+		public void SetY(int y_)
+		{
+			y = y_;
+		}
+
+		public void SetName(String name)
+		{
+			Name = name;
 		}
 
 		//Ф-ии получения данных из полей
@@ -80,7 +103,7 @@ namespace s3l6
 		//Вывод данных о Мяче
 		public void Display()
 		{
-			Console.Write("\nX = " + x + " Y = " + y + " Name - " + Name + "\n");
+			Console.Write("X = " + x + " Y = " + y + " Name - " + Name + "\n");
 		}
 		public void MoveBall()
 		{
@@ -143,6 +166,7 @@ namespace s3l6
 		{
 			Name = "Ball " + Name;
 		}
+
 
 	}
 }

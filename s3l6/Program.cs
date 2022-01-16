@@ -11,7 +11,132 @@ namespace s3l6
             Rating MyRating = new Rating();
             Button MyButton = new Button();
 
+			Coin[] masCoin = new Coin[5];
+			for (int i = 0; i < 5; i++)
+			{
+				masCoin[i] = new Coin();
+				masCoin[i].RandXY();
+			}
 
+			Console.WriteLine("Лабораторная 9");
+			Console.WriteLine("МЯЧ:");
+
+			Ball Ball1 = new Ball();
+			Ball Ball2 = new Ball("Круглый");
+			Ball Ball3 = new Ball(1, 1, "Один");
+
+			Console.WriteLine();
+			Console.WriteLine("1) Конструктор без параметров:");
+			Ball1.Display();
+			Console.WriteLine("\n2) Конструктор с 1-им параметром:");
+			Ball2.Display();
+			Console.WriteLine("\n3) Конструктор с параметрами:");
+			Ball3.Display();
+			Console.WriteLine("\n\n");
+
+			///////////////
+			Console.WriteLine("ПЛАТФОРМА:");
+
+			Platform Platform1 = new Platform();
+			Platform Platform2 = new Platform(2);
+			Platform Platform3 = new Platform(1,1);
+
+			Console.WriteLine();
+			Console.WriteLine("1) Конструктор без параметров:");
+			Platform1.Display();
+			Console.WriteLine("\n2) Конструктор с 1-им параметром:");
+			Platform2.Display();
+			Console.WriteLine("\n3) Конструктор с параметрами:");
+			Platform3.Display();
+			Console.WriteLine("\n\n");
+
+			///////////
+			Console.WriteLine("МОНЕТА:");
+
+			Coin Coin1 = new Coin();
+			Coin Coin2 = new Coin(3);
+			Coin Coin3 = new Coin(2, 3);
+
+			Console.WriteLine();
+			Console.WriteLine("1) Конструктор без параметров:");
+			Coin1.Display();
+			Console.WriteLine("\n2) Конструктор с 1-им параметром:");
+			Coin2.Display();
+			Console.WriteLine("\n3) Конструктор с параметрами:");
+			Coin3.Display();
+			Console.WriteLine("\n\n");
+
+			////////
+			Console.WriteLine("РЕЙТИНГ:");
+
+			Rating Rating1 = new Rating();
+			Rating Rating2 = new Rating(10);
+			Rating Rating3 = new Rating(3, masCoin);
+
+			Console.WriteLine();
+			Console.WriteLine("1) Конструктор без параметров:");
+			Rating1.Display();
+			Console.WriteLine("\n2) Конструктор с 1-им параметром:");
+			Rating2.Display();
+			Console.WriteLine("\n3) Конструктор с параметрами:");
+			Rating3.Display();
+			Console.WriteLine("\n\n");
+
+			////////////
+			Console.WriteLine("КНОПКА:");
+
+			Button Button1 = new Button();
+			Button Button2 = new Button(true);
+
+			Console.WriteLine();
+			Console.WriteLine("1) Конструктор без параметров:");
+			Button1.Display();
+			Console.WriteLine("\n2) Конструктор с 1-им параметром:");
+			Button2.Display();
+			Console.WriteLine("\n\n");
+
+			/////////////
+			Coin[] CoinArr = new Coin[3];
+			for (int j = 0; j < 3; j++)
+				CoinArr[j] = new Coin(j);
+			Console.WriteLine("\nИнициализировать небольшой массив конструктором с одним параметром:");
+			for (int j = 0; j < 3; j++)
+				CoinArr[j].Display();
+			Console.WriteLine("\n\n");
+
+
+			//////////////
+			Console.WriteLine("Продемонстрировать различие между мелким и глубоким копированием:");
+			Coin CoinTestCopy1 = new Coin(4,4), CoinTestCopy2 = new Coin(5,5);
+
+			CoinTestCopy2 = CoinTestCopy1;
+
+			Console.WriteLine("Поверхностная копия 1-го объекта во 2-ой:");
+			CoinTestCopy1.Display();
+			CoinTestCopy2.Display();
+			Console.WriteLine("");
+			Console.WriteLine("Изменение 1-го объекта, а 2-ой не трогается:");
+			CoinTestCopy1.Set(3,3);
+			CoinTestCopy1.Display();
+			CoinTestCopy2.Display();
+			Console.WriteLine("");
+
+			CoinTestCopy1.Set(4,4);
+			CoinTestCopy2 = CoinTestCopy1.DeepCopy();
+
+			Console.WriteLine("Глубокая копия 1-го объекта во 2-ой:");
+			CoinTestCopy1.Display();
+			CoinTestCopy2.Display();
+			Console.WriteLine("");
+			Console.WriteLine("Изменение 1-го объекта, а 2-ой не трогается:");
+			CoinTestCopy1.Set(3,3);
+			CoinTestCopy1.Display();
+			CoinTestCopy2.Display();
+			Console.WriteLine("\n\n");
+
+
+
+			/*
 			Console.Write("\nЛаба 8. Модифицировать проект путем добавления в один из классов \nкак минимум одного статического поля и одного статического метода:");
 			Console.Write("На примере класса Мяч, двусвязанный список\n\n");
 

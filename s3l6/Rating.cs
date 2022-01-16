@@ -21,6 +21,34 @@ namespace s3l6
 				ArrayCoins[i] = C;
 		}
 
+		public Rating(int points)
+		{
+			this.points = points;
+			Coin C = new Coin();
+			for (int i = 0; i < 5; i++)
+				ArrayCoins[i] = C;
+		}
+
+		public Rating(int pointsi, Coin[] array)
+		{
+			points = pointsi;
+			Coin C = new Coin();
+			for (int i = 0; i < 5; i++)
+				ArrayCoins[i] = array[i];
+		}
+
+		public void SetPoint(int pointsi)
+		{
+			points = pointsi;
+		}
+
+		public void SetCoinArray(Coin[] array)
+		{
+			Coin C;
+			for (int i = 0; i < 5; i++)
+				ArrayCoins[i] = array[i];
+		}
+
 		//Ф-ии получения данных из полей
 		public int GetPoints()
 		{

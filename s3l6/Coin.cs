@@ -18,6 +18,42 @@ namespace s3l6
 			y = 0;
 		}
 
+		public Coin(int x)
+		{
+			this.x = x;
+			y = 0;
+		}
+
+		public Coin(int x, int y)
+		{
+			this.x = x;
+			this.y = y;
+		}
+
+		public void SetX(int x)
+		{
+			this.x = x;
+		}
+		public void SetY(int y)
+		{
+			this.y = y;
+		}
+
+		// Поверхностная копия
+		public Coin ShallowCopy()
+		{
+			return (Coin)this;
+		}
+
+		// Глубокая копия
+		public Coin DeepCopy()
+		{
+			Coin other = (Coin)this.MemberwiseClone();
+			other.Set(x,y);
+			return other;
+		}
+
+
 		//Ф-ии получения данных из полей
 		public int GetX()
 		{
