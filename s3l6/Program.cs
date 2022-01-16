@@ -6,6 +6,29 @@ namespace s3l6
     {
         static void Main(string[] args)
         {
+			Coin[] Coin1 = new Coin[3]; 
+			Coin[,] Coin2 = new Coin[2, 2];
+
+			Coin1[0] = new Coin(3,3);
+			Coin1[1] = new Coin(4,4);
+			Coin1[2] = new Coin(5,5);
+
+			for (int i = 0; i < 2; i++)
+				for (int j = 0; j < 2; j++)
+					Coin2[i, j] = new Coin(j,j+2);
+
+			// Вывод
+			Console.WriteLine("Одномерный массив размером [3]");
+			for (int i = 0; i < 3; i++)
+				Coin1[i].Display();
+
+			Console.WriteLine("\nДвумерный массив размером [2][2]");
+			for (int i = 0; i < 2; i++)
+				for (int j = 0; j < 2; j++)
+					Coin2[i, j].Display();
+
+
+			/*
             Ball MyBall = new Ball();
 			Platform MyPlatform = new Platform();
             Rating MyRating = new Rating();
