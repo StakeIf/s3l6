@@ -6,6 +6,20 @@ namespace s3l6
     {
         static void Main(string[] args)
         {
+			Console.WriteLine("Лабораторная 10\n");
+			Console.WriteLine("Значение в отрезке [0;15]\n");
+			Rating Rating1 = new Rating(-5);
+			Console.WriteLine("Текущее значение: " + Rating1.GetPoints());
+			Rating1.SetPoint(16);
+			Console.WriteLine("Текущее значение: " + Rating1.GetPoints());
+			Rating1.SetPoint(14);
+			Console.WriteLine("Текущее значение: " + Rating1.GetPoints());
+			Rating1.PlusRating();
+			Console.WriteLine("Текущее значение: " + Rating1.GetPoints());
+			Rating1.PlusRating();
+			Console.WriteLine("Текущее значение: " + Rating1.GetPoints());
+
+			/*
 			Coin[] Coin1 = new Coin[3]; 
 			Coin[,] Coin2 = new Coin[2, 2];
 

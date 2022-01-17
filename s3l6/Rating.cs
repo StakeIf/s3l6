@@ -21,27 +21,37 @@ namespace s3l6
 				ArrayCoins[i] = C;
 		}
 
+		//Конструктор с 1 параметром
 		public Rating(int points)
 		{
-			this.points = points;
+			this.points = 0;
+			if (IsRightRating(points))
+				this.points = points;
 			Coin C = new Coin();
 			for (int i = 0; i < 5; i++)
 				ArrayCoins[i] = C;
 		}
-
+		
+		//Конструктор с параметрами
 		public Rating(int pointsi, Coin[] array)
 		{
-			points = pointsi;
+			points = 0;
+			if (IsRightRating(pointsi))
+				points = pointsi;
 			Coin C = new Coin();
 			for (int i = 0; i < 5; i++)
 				ArrayCoins[i] = array[i];
 		}
 
+		//Задание поля Очки
 		public void SetPoint(int pointsi)
 		{
-			points = pointsi;
+			points = 0;
+			if (IsRightRating(pointsi))
+				points = pointsi;
 		}
 
+		//Задания поля Монеты
 		public void SetCoinArray(Coin[] array)
 		{
 			Coin C;
@@ -59,7 +69,10 @@ namespace s3l6
 		//Задание полей класса 
 		public void Set(int pointsi, Coin[] array)
 		{
-			points = pointsi;
+			points = 0;
+			if (IsRightRating(pointsi))
+				points = pointsi;
+
 			for (int i = 0; i < 5; i++)
 				ArrayCoins[i] = array[i];
 		}
@@ -73,9 +86,31 @@ namespace s3l6
 				ArrayCoins[i].Display();
 		}
 
+		//Увеличение рейтинга на 1
 		public void PlusRating()
 		{
-			points = points + 1;
+			points++;
+			if (IsRightRating(points) == false)
+				points--;
 		}
+
+		// Проверка числа на подходяее 
+		public bool IsRightRating(int Rating)
+		{
+			bool res = true;
+			try                                                    // ищем исключения внутри этого блока и отправляем их в соответствующий обработчик catch
+			{
+				if (Rating < 0 || Rating > 15)                          // Если пользователь ввел неверное число, то выбрасывается исключение
+					throw new Exception("Incorrect value.");       // выбрасывается исключение типа const char*
+				return res;
+			}
+			catch (Exception ex)           // обработчик исключений типа const char*
+			{
+				Console.WriteLine("\nError: " + ex.Message + '\n');
+				res = false;
+				return res;
+			}
+		}
+
 	}
 }
