@@ -6,9 +6,6 @@ namespace s3l6
     {
         static void Main(string[] args)
         {
-
-			
-			Ball Ball1 = new Ball(1, 1, "One");
 			/*Point Point1 = new Point(2, 2);
 
 			Console.WriteLine("3) Продемонстрировать перегрузку метода... ");
@@ -21,13 +18,57 @@ namespace s3l6
 			Console.WriteLine("\n6) Заменить методы Display используя метод ToString для C#\n");
 			Console.WriteLine("Данные мяча: " + Ball1.ToString());
 
-			*///
+			*/
+			/*
 
-			Console.WriteLine("8) Придумать разумное использовани абстрактного класса и создать его. \nПродемонстрировать его использование;\n");
+			Ball Ball1 = new Ball();
+			Coin Coin1 = new Coin();
+
+			Console.WriteLine("9) Придумать разумное использование интерфейсов.\nПродемонстрировать их использование\n");
+
+			//Ввод
 			Ball1.InpData();
 			Console.WriteLine();
-			Ball1.Display();
+			Coin1.InpData();
+			Console.WriteLine();
 
+			//Вывод
+			Ball1.Display();
+			Coin1.Display();
+			Console.WriteLine();
+
+			Console.WriteLine(Ball1.Who());
+			Console.WriteLine(Coin1.Who());
+			*/
+
+			Console.WriteLine("10) Продемонстрировать различие между мелким и глубоким копированием:");
+			Ball Ball1 = new Ball(10, 10, "Десять");
+			Ball Ball2 = new Ball(5,5, "Пять");
+
+			Ball2 = Ball1;
+
+			Console.WriteLine("Поверхностная копия 1-го объекта во 2-ой:");
+			Ball1.Display();
+			Ball2.Display();
+			Console.WriteLine("");
+			Console.WriteLine("Изменение 1-го объекта, а 2-ой не трогается:");
+			Ball1.Set(7,7, "Семь");
+			Ball1.Display();
+			Ball2.Display();
+			Console.WriteLine("");
+
+			Ball1.Set(8,8, "Восемь");
+			Ball2 = Ball1.DeepCopy();
+
+			Console.WriteLine("Глубокая копия 1-го объекта во 2-ой:");
+			Ball1.Display();
+			Ball2.Display();
+			Console.WriteLine("");
+			Console.WriteLine("Изменение 1-го объекта, а 2-ой не трогается:");
+			Ball1.Set(1,1, "Один");
+			Ball1.Display();
+			Ball2.Display();
+			Console.WriteLine("\n\n");
 
 
 			//Ball1.Display();

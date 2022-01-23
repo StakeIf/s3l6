@@ -2,9 +2,21 @@
 using System.Collections.Generic;
 using System.Text;
 
+interface ICoord
+{
+    // Ввод 
+    void InpData();
+
+    // Вывод 
+    void Display();
+
+    // Виртуальная/не виртуальная функция вывода что за объект
+    string Who();
+}
+
 namespace s3l6
 {
-    public abstract class Point
+    public abstract class Point: ICoord
     {
         protected int x;
         protected int y;
@@ -66,7 +78,7 @@ namespace s3l6
             y = Convert.ToInt32(Console.ReadLine());
         }
         //Вывод данных 
-        public void Display()
+        public virtual void Display()
         {
             Console.Write("X = " + x + " Y = " + y + "\n");
         }

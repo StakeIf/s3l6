@@ -64,9 +64,9 @@ namespace s3l6
 		}
 
 		//Вывод данных о Мяче
-		public void Display()
+		public override void Display()
 		{
-			Console.Write("X = " + x + " Y = " + y + " Name - " + Name + "\n");
+			Console.Write("Ball data:\nX = " + x + " Y = " + y + " Name - " + Name + "\n");
 		}
 		public void MoveBall()
 		{
@@ -138,5 +138,22 @@ namespace s3l6
         {
 			return ("X = " + x + " Y = " + y + " Name - " + Name + "\n");
 		}
+
+		// Поверхностное копирование
+		public Ball ShallowCopy()
+		{
+			return (Ball)this.MemberwiseClone();
+		}
+
+		// Глубокое копирование
+		public Ball DeepCopy()
+		{
+			Ball other = (Ball)this.MemberwiseClone();
+			other.x = x;
+			other.y = y;
+			other.name = name;
+			return other;
+		}
+
 	}
 }

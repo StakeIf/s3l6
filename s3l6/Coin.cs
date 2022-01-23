@@ -5,12 +5,8 @@ using System.Text;
 namespace s3l6
 {
 	//Монета
-	public class Coin
+	public class Coin : Point
 	{
-		private int x = 0;
-		private int y = 0;
-
-
 		//Конструктор
 		public Coin()
 		{
@@ -30,15 +26,6 @@ namespace s3l6
 			this.y = y;
 		}
 
-		public void SetX(int x)
-		{
-			this.x = x;
-		}
-		public void SetY(int y)
-		{
-			this.y = y;
-		}
-
 		// Поверхностная копия
 		public Coin ShallowCopy()
 		{
@@ -53,33 +40,6 @@ namespace s3l6
 			return other;
 		}
 
-
-		//Ф-ии получения данных из полей
-		public int GetX()
-		{
-			return x;
-		}
-		public int GetY()
-		{
-			return y;
-		}
-
-		//Задание полей класса Монета
-		public void Set(int xi, int yi)
-		{
-			x = xi;
-			y = yi;
-		}
-
-		//Ввод данных о Монете
-		public void InpData()
-		{
-			Console.Write("Input x");
-			x = Convert.ToInt32(Console.ReadLine());
-			Console.Write("Input y");
-			y = Convert.ToInt32(Console.ReadLine());
-		}
-
 		//Случайный ввод координат монеты
 		public void RandXY()
 		{
@@ -90,9 +50,15 @@ namespace s3l6
 
 
 		//Вывод данных о Монете
-		public void Display()
+		public override void Display()
 		{
-			Console.Write("X = " + x + " Y = " + y + "\n");
+			Console.Write("Coin data:\nX = " + x + " Y = " + y + "\n");
+		}
+
+		// Виртуальная/не виртуальная функция вывода, что за объект
+		public override string Who()
+		{
+			return "Монета ";
 		}
 	}
 }
