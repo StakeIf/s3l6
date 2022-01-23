@@ -4,7 +4,7 @@ using System.Text;
 
 namespace s3l6
 {
-    class Point
+    public abstract class Point
     {
         protected int x;
         protected int y;
@@ -58,11 +58,11 @@ namespace s3l6
         }
 
         //Ввод данных
-        public void InpData()
+        public virtual void InpData()
         {
-            Console.Write("Input x");
+            Console.Write("Input x: ");
             x = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Input y");
+            Console.Write("Input y: ");
             y = Convert.ToInt32(Console.ReadLine());
         }
         //Вывод данных 

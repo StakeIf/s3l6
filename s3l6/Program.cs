@@ -7,8 +7,9 @@ namespace s3l6
         static void Main(string[] args)
         {
 
+			
 			Ball Ball1 = new Ball(1, 1, "One");
-			Point Point1 = new Point(2, 2);
+			/*Point Point1 = new Point(2, 2);
 
 			Console.WriteLine("3) Продемонстрировать перегрузку метода... ");
 
@@ -19,6 +20,14 @@ namespace s3l6
 
 			Console.WriteLine("\n6) Заменить методы Display используя метод ToString для C#\n");
 			Console.WriteLine("Данные мяча: " + Ball1.ToString());
+
+			*///
+
+			Console.WriteLine("8) Придумать разумное использовани абстрактного класса и создать его. \nПродемонстрировать его использование;\n");
+			Ball1.InpData();
+			Console.WriteLine();
+			Ball1.Display();
+
 
 
 			//Ball1.Display();

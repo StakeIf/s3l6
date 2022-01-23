@@ -56,12 +56,9 @@ namespace s3l6
 			this.Name = Namei;
 		}
 		//Ввод данных о Мяче
-		public void InpData()
+		public override void InpData() 
 		{
-			Console.Write("Input x: ");
-			x = Convert.ToInt32(Console.ReadLine());
-			Console.Write("Input y: ");
-			y = Convert.ToInt32(Console.ReadLine());
+			base.InpData();
 			Console.Write("Input Name: ");
 			Name = Console.ReadLine();
 		}
