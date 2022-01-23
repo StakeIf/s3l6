@@ -4,26 +4,15 @@ using System.Text;
 
 namespace s3l6
 {
-	class Ball
+	class Ball : Point
 	{
-		private int x = 0;
-		private int y = 0;
 		private String Name = "";
 
 		private static Ball lastBall;
 		private Ball prev;
 		private Ball next;
 
-		public int X
-		{
-			get => x;
-			set => x = value;
-		}
-		public int Y
-		{
-			get => y;
-			set => y = value;
-		}
+		
 		public string name
 		{
 			get => Name;
@@ -31,36 +20,22 @@ namespace s3l6
 		}
 
 		//Конструктор
-		public Ball()
+		public Ball(): base()
 		{
-			x = 0;
-			y = 0;
 			Name = "";
 		}
 
-		public Ball(String name)
+		public Ball(String name) : base()
 		{
-			x = 0;
-			y = 0;
+			//x = 0;
+			//y = 0;
 			Name = name;
 		}
 
-		public Ball(int x_, int y_, String name)
+		//Конструктор с параметрами
+		public Ball(int x_, int y_, String name): base(x_,y_)
 		{
-			x = x_;
-			y = y_;
 			Name = name;
-		}
-
-		//Установщики значений
-		public void SetX(int x_)
-		{
-			x = x_;
-		}
-
-		public void SetY(int y_)
-		{
-			y = y_;
 		}
 
 		public void SetName(String name)
@@ -68,15 +43,6 @@ namespace s3l6
 			Name = name;
 		}
 
-		//Ф-ии получения данных из полей
-		public int GetX()
-		{
-			return x;
-		}
-		public int GetY()
-		{
-			return y;
-		}
 		public String GetName()
 		{
 			return this.Name;
@@ -166,7 +132,14 @@ namespace s3l6
 		{
 			Name = "Ball " + Name;
 		}
-
-
+		// Виртуальная/не виртуальная функция вывода, что за объект
+		public override string Who()
+        {
+			return "Мяч ";
+        }
+		public String ToString()
+        {
+			return ("X = " + x + " Y = " + y + " Name - " + Name + "\n");
+		}
 	}
 }

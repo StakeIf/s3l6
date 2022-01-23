@@ -6,6 +6,25 @@ namespace s3l6
     {
         static void Main(string[] args)
         {
+
+			Ball Ball1 = new Ball(1, 1, "One");
+			Point Point1 = new Point(2, 2);
+
+			Console.WriteLine("3) Продемонстрировать перегрузку метода... ");
+
+			Point1.Display();
+			Ball1.Display();
+			Point1.MyLocation();
+			Ball1.MyLocation();
+
+			Console.WriteLine("\n6) Заменить методы Display используя метод ToString для C#\n");
+			Console.WriteLine("Данные мяча: " + Ball1.ToString());
+
+
+			//Ball1.Display();
+
+
+			/*
 			Console.WriteLine("Лабораторная 10\n");
 			Console.WriteLine("Значение в отрезке [0;15]\n");
 			Rating Rating1 = new Rating(-5);
